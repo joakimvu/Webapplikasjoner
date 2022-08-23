@@ -60,4 +60,48 @@ const createElement = () => {
 
 createBtn.addEventListener("click", createElement);
 
-Oppgave 6
+// Oppgave 6
+const list = document.getElementById("list");
+const removeListBtn = document.getElementById("remove-li");
+
+const removeList = () => {
+  const lastListElement = list.lastElementChild;
+  console.log(lastListElement);
+  if (lastListElement) {
+    lastListElement.remove();
+  }
+};
+removeListBtn.addEventListener("click", removeList);
+
+// Oppgave 7
+const inputName = document.getElementById("name");
+const orderBtn = document.getElementById("order");
+
+const disableButton = () => {
+  const checkName = inputName.value;
+  if (inputName && name.length >= 4) {
+    orderBtn.style = "border: 1px solid red";
+    orderBtn.disabled = true;
+  } else {
+    orderBtn.style = "border: 1px solid black";
+    orderBtn.disabled = false;
+  }
+};
+
+inputName.addEventListener("keyup", disableButton);
+
+// Oppgave 8
+const unorderedList = document.querySelector(".children");
+const listElement = unorderedList.querySelectorAll("li");
+const colorbtn = document.getElementById("color");
+
+const changeListColor = () => {
+  listElement.forEach((li, index) => {
+    if (index % 2 === 0) {
+      li.style = "border: 2px solid blue; padding: .5rem 0; margin: .5rem 0";
+    } else
+      li.style = "border: 2px solid red; padding: .5rem 0; margin: .5rem 0";
+  });
+};
+
+colorbtn.addEventListener("click", changeListColor);
