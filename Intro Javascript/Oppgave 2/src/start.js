@@ -62,8 +62,21 @@ const searchName = (e) => {
   // console.log(filteredUsers);
 };
 // TODO: Lag en funksjon som håndterer filteret og oppdaterer grensesnittet med resultatet fra filteret
-const handleFilter = () => {};
+const inputAge = document.getElementById("age");
+const handleFilter = () => {
+  // console.log(inputAge.value);
+  filteredUsers.forEach((user, index) => {
+    userList.innerHTML = null;
+    // console.log(user.age);
+    if (user.age < inputAge.value) {
+      filteredUsers[index];
+    }
+    userList.innerHTML += `<li><span>${user.id}</span><span>${user.name}</span><span>${user.age}</span></li>`;
+  });
+  console.log(filteredUsers);
+};
 // TODO: Lytt til tastatur klikk på søkefeltet, den skal trigge søkefunksjonen (handleSearch)
 inputName.addEventListener("keyup", searchName);
 // TODO: Lytt til klikk på filter-knappen, den skal trigge filterfunksjonen (handleFilter)
 const filterBtn = document.getElementById("filter");
+filterBtn.addEventListener("click", handleFilter);
