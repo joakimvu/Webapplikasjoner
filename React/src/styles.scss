@@ -1,0 +1,13 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  color: rgb(0, 81, 174);
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
