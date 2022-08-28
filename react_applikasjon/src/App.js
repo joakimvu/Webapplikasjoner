@@ -1,23 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      {/* Header  */}
+      <header>
+        <h1>
+          <a href="#">HIOF</a>
+        </h1>
+        <nav>
+          <a href="#">User</a>
+        </nav>
       </header>
+
+      <main>
+        {/* New todo form */}
+        <form action="#">
+          <label for="title">Title</label>
+          <input type="text" id="title" />
+
+          <label for="content">Content</label>
+          <textarea type="text" id="content"></textarea>
+
+          <input type="button" value="Add" id="add-btn" />
+        </form>
+
+        <h2 className="my-todo">My Todos</h2>
+
+        {/* Todo list */}
+        <section className="todo-grid">
+          <section className="todo">
+            <h3>To do title</h3>
+            <p>I'm a baby sriracha hot chicken mixtape pabst organic air...</p>
+            <input type="button" value="Complete" id="complete-btn" />
+          </section>
+          <section className="todo">
+            <h3>To do title</h3>
+            <p>I'm a baby sriracha hot chicken mixtape pabst organic air...</p>
+            <input type="button" value="Complete" id="complete-btn" />
+          </section>
+          <section className="todo">
+            <h3>To do title</h3>
+            <p>I'm a baby sriracha hot chicken mixtape pabst organic air...</p>
+            <input type="button" value="Complete" id="complete-btn" />
+          </section>
+          <section className="todo">
+            <h3>To do title</h3>
+            <p>I'm a baby sriracha hot chicken mixtape pabst organic air...</p>
+            <input type="button" value="Complete" id="complete-btn" />
+          </section>
+          <section className="todo">
+            <h3>To do title</h3>
+            <p>I'm a baby sriracha hot chicken mixtape pabst organic air...</p>
+            <input type="button" value="Complete" id="complete-btn" />
+          </section>
+        </section>
+      </main>
     </div>
   );
 }
