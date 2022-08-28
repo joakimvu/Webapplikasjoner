@@ -55,7 +55,7 @@ textarea {
 }
 
 #content {
-  min-height: 200px;
+  height: 150px;
 }
 
 #title {
