@@ -1,17 +1,10 @@
 import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      {/* Header  */}
-      <header>
-        <h1>
-          <a href="#">HIOF</a>
-        </h1>
-        <nav>
-          <a href="#">User</a>
-        </nav>
-      </header>
+      <Navbar />
 
       <main>
         {/* New todo form */}
