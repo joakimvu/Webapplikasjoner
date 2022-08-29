@@ -1,6 +1,6 @@
 import Todo from "./Todo";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, removeTodo }) => {
   return (
     <>
       <h2 className="todo_header">My To do's</h2>
@@ -12,6 +12,7 @@ const TodoList = ({ todos }) => {
               id={todo.id}
               title={todo.title}
               content={todo.content}
+              removeTodo={removeTodo}
             />
           ))
         ) : (
