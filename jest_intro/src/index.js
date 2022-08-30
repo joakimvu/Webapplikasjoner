@@ -5,3 +5,9 @@ export function myFunction(argument) {
   }
   return 5 + addValue;
 }
+
+export const fetchUser = async(userProvider) => {
+  // const user = await userService.getUser()
+  const user = await userProvider()
+  return user;
+}
