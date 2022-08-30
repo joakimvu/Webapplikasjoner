@@ -1,6 +1,7 @@
 export function myFunction(argument) {
+  let addValue = 0;
   if (typeof argument === "string") {
-    return 6;
+    addValue = 1;
   }
-  return 5;
+  return 5 + addValue;
 }
