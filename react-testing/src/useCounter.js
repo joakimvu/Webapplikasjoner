@@ -1,4 +1,4 @@
-export const useCounter = (initialCount = 0) => {
+export const useCounter = (initialCount) => {
   return {
     count: initialCount,
   };
