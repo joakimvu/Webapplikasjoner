@@ -1,19 +1,19 @@
 import { Counter } from "./Counter";
 import { fireEvent, render, screen } from "@testing-library/react";
 
-// it("should display the number passed as props", () => {
-//   render(<Counter count={9} />);
+it.skip("should display the number passed as props", () => {
+  render(<Counter count={9} />);
 
-//   const paragraph = document.querySelector("p");
-//   expect(paragraph).toHaveTextContent("Count is: 9");
-// });
+  const paragraph = document.querySelector("p");
+  expect(paragraph).toHaveTextContent("Count is: 9");
+});
 
-// it("should start count at 0", () => {
-//   render(<Counter />);
+it.skip("should start count at 0", () => {
+  render(<Counter />);
 
-//   const paragraph = document.querySelector("p");
-//   expect(paragraph).toHaveTextContent("Count is: 0");
-// });
+  const paragraph = document.querySelector("p");
+  expect(paragraph).toHaveTextContent("Count is: 0");
+});
 
 it("Counter should increment when + button is clicked", () => {
   render(<Counter />);
