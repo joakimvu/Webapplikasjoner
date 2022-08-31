@@ -54,3 +54,15 @@ it("should decrement count by number passed to increment function", () => {
 
   expect(result.current.count).toBe(-5);
 });
+
+it("should use delta of 1 if argument to increment or decrement is not a number", () => {
+  const { result } = renderHook(() => useCounter());
+
+  expect(result.current.count).toBe(0);
+
+  act(() => {
+    result.current.increment("hey");
+  });
+
+  expect(result.current.count).toBe(1);
+});
