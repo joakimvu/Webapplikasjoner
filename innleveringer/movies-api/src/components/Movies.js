@@ -14,7 +14,7 @@ const Movies = ({ movies }) => {
           />
         ))
       ) : (
-        <p>No movies with this search</p>
+        <p>Ingen filmer med dette søket</p>
       )}
     </ul>
   );
