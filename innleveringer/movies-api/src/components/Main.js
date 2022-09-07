@@ -5,12 +5,17 @@ import { useState, useEffect } from "react";
 const Main = () => {
   const [search, setSearch] = useState();
   const [movies, setMovies] = useState();
+  const [loading, setLoading] = useState(false);
 
   // fetching omdbapi and showing the first 5 starwars movies
   useEffect(() => {
+    setLoading(true);
     fetch("http://www.omdbapi.com/?s=Star%20Wars&apikey=5cc65390")
       .then((response) => response.json())
-      .then((data) => setMovies(data.Search.splice(0, 5)))
+      .then((data) => {
+        setLoading(false);
+        setMovies(data.Search.splice(0, 5));
+      })
       .catch((error) => console.log(error));
   }, []);
 
@@ -38,6 +43,7 @@ const Main = () => {
         handleInput={handleInput}
         handleSearch={handleSearch}
       />
+      {loading ? <p>Laster inn...</p> : null}
       <Movies movies={movies} />
     </main>
   );
