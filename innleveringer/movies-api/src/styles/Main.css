@@ -18,6 +18,7 @@ ul {
 
 ul li {
   width: 1fr;
+  list-style: none;
 }
 
 ul li img {
