@@ -1,0 +1,22 @@
+{"questions": [
+    {
+      "title": "Which pokemon did Ash Ketchum get first?",
+      "answers": [
+        { "answer": "Bulbasaur" },
+        {
+          "answer": "Charmander"
+        },
+        {
+          "answer": "Squirtle"
+        },
+        {
+          "answer": "Pikachu",
+          "correct": true
+        }
+      ],
+      "helper": {
+        "text": "Hjelpetekst kommer her"
+      }
+    }
+  ]
+}
