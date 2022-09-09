@@ -1,8 +1,7 @@
 import questions from "./questions.json" assert { type: "json" };
 
-const quizQuestions = questions.questions[0];
-
-export const quizCheck = (guess) => {
+export const quizCheck = (guess, quizNumber) => {
+  const quizQuestions = questions.questions[quizNumber];
   const answers = quizQuestions.answers;
   let feedback = "Sorry, wrong answer! Try again next time";
 
