@@ -9,17 +9,17 @@ const CreateUser = () => {
   const [nickname, setNickname] = useState("");
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
-  const [validationErrors, setValidationErrors] = useState(null);
+  const [validationErrors, setValidationErrors] = useState({});
 
-  const handleEmailChange = (event) => {
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
 
-  const handleNicknameChange = (event) => {
+  const handleNicknameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNickname(event.target.value);
   };
 
-  const onSubmit = async (event) => {
+  const onSubmit = async (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     setData(null);
 
@@ -43,7 +43,7 @@ const CreateUser = () => {
         email: "Ikke gyldig e-post",
       });
     } else {
-      setValidationErrors(null);
+      setValidationErrors({});
       // bør her bruke custom hook (gjennomgått)
       // eller bibliotek (React Query, Redux RTK, SWR) til å sende forespørselen
       try {
@@ -53,7 +53,7 @@ const CreateUser = () => {
         const response = await axios.post("/api/users", { email, nickname });
 
         if (response?.data?.success) {
-          setError(null);
+          setError("");
           setData(response?.data?.data);
         }
       } catch (err) {
