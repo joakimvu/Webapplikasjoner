@@ -1,3 +1,5 @@
+import ColorPicker from "./ColorPicker";
+
 const rowData = {
   number: 1,
   cells: [
@@ -8,28 +10,42 @@ const rowData = {
   ],
 };
 
-// TODO: Ta i mot handleCellClick
-// TODO: Ta i mot handleRowSubmit
-// TODO: Ta i mot isCurrentRow
-// TODO: Utvide til å være et form (se RowForm)
-// TODO: Bruke isCurrentRow til å avgjøre hva som skal være mulig å gjøre
-export default function Row() {
+export default function Row({
+  row,
+  handleCellClick,
+  handleRowSubmit,
+  isCurrentRow,
+  handleSelectedColor,
+}) {
   return (
-    <div className="row-inner-wrapper">
-      <div className="row">
-        <p>{rowData.number}</p>
-        <div className="cells">
-          {rowData.cells.map((cell) => (
-            <div key={cell.cellname} className="cells">
-              <button
-                className="cellButton"
-                type="button"
-                style={{ backgroundColor: cell.background ?? "transparent" }}
-              ></button>
+    <>
+      <form onSubmit={handleRowSubmit}>
+        <div className="row-inner-wrapper">
+          <div className="row">
+            <p>{row.number}</p>
+            <div className="cells">
+              {row.cells.map((cell) => (
+                <div key={cell.cellname} className="cell">
+                  <button
+                    className="cellButton"
+                    type="button"
+                    onClick={handleCellClick}
+                    style={{
+                      backgroundColor: cell.background ?? "transparent",
+                    }}
+                  ></button>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </div>
+        <button>Send</button>
+      </form>
+      <ColorPicker
+        colors={[]}
+        selectedColor={null}
+        handleSelectedColor={handleSelectedColor}
+      />
+    </>
   );
 }
