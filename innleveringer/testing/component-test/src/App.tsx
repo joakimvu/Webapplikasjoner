@@ -1,11 +1,8 @@
-import './App.css'
-import Accordion from './Accordion'
+import "./App.css";
+import Accordion from "../components/Accordion";
 
 function App() {
-
-  return (
-    <Accordion title="Users" children="Testing"/>
-  )
+  return <Accordion title="Users" children="Testing" />;
 }
 
-export default App
+export default App;
