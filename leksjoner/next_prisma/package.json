@@ -1,19 +1,27 @@
 {
-  "name": "supervote",
+  "name": "next_prisma",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "vitest"
+    "test": "vitest",
+    "prisma:init": "prisma init",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:generate": "prisma generate",
+    "prisma:seed": "prisma db seed",
+    "prisma:push": "prisma db push"
   },
   "dependencies": {
+    "@prisma/client": "^4.4.0",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/node": "^7.19.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
@@ -25,8 +33,12 @@
     "eslint-config-next": "12.3.1",
     "jsdom": "^20.0.0",
     "msw": "^0.47.3",
+    "prisma": "^4.4.0",
     "sass": "^1.55.0",
     "typescript": "4.8.4",
     "vitest": "0.23.4"
+  },
+  "prisma": {
+    "seed": "babel-node prisma/seed.js"
   }
 }
