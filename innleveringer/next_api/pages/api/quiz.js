@@ -76,6 +76,8 @@ const quiz = [
   },
 ]
 
+// npx json-server --watch data/question.json --port 8000
+
 export default function handler(req, res) {
   if (req.method === 'POST') {
     // tar i mot data som sendes med forespørselen
