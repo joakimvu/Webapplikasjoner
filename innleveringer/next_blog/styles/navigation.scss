@@ -8,6 +8,10 @@
 
   h1 {
     color: #247ad5;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   ul {

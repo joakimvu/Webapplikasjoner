@@ -3,7 +3,9 @@ import Link from 'next/Link'
 const Navigation = () => {
   return (
     <nav className="navbar">
-      <h1>Next Blog</h1>
+      <Link href="/">
+        <h1>Next Blog</h1>
+      </Link>
       <ul>
         <li>
           <Link href="/">

@@ -1,5 +1,5 @@
 const index = () => {
-  return <h2>Add a new blo</h2>
+  return <h2>Add a new blog</h2>
 }
 
 export default index

@@ -7,7 +7,6 @@ export default function Home() {
     isPending,
     error,
   } = useFetch('http://localhost:8000/blogs')
-  console.log(blogs)
 
   const handleDelete = (id) => {
     const newBlogs = blogs.filter((blog) => blog.id !== id)
