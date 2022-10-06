@@ -1,5 +1,5 @@
 const blogs = () => {
-  return <h2>Alle blogs</h2>
+  return <h2>Alle blog</h2>
 }
 
 export default blogs

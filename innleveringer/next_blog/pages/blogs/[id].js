@@ -26,11 +26,14 @@ const blogsDetails = () => {
     })
   }
 
+  const blogExistCheck = Object.keys(blog).length > 0
+  console.log(blogExistCheck)
+
   return (
     <div className="blog-details">
       {isPending && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      {blog && (
+      {blog && blogExistCheck ? (
         <article>
           <h2>{blog?.title}</h2>
           <p>Skrevet av {blog?.author}</p>
@@ -38,7 +41,7 @@ const blogsDetails = () => {
           {!Loading && <button onClick={handleDelete}>Slett artikkel</button>}
           {Loading && <button disabled>Sletter blogg...</button>}
         </article>
-      )}
+      ) : null}
     </div>
   )
 }

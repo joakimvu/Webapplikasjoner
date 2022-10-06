@@ -1,8 +1,8 @@
 {
   "blogs": [
     {
-      "title": "Min første artikkel",
-      "body": "hvor er det asd sda wa",
+      "title": "Next Intro",
+      "body": "I denne modulen skal vi se på hva Next.js er, hvordan Next fungerer og hvordan vi kan bruke Next til å lage et enkelt API.",
       "author": "joakim",
       "id": 1
     }
