@@ -16,15 +16,15 @@ describe("Accordion", () => {
     );
   });
 
-  test.skip("should show title all the time", () => {
+  test("should show title all the time", () => {
     expect(screen.getByText(/Testing/i)).toBeInTheDocument();
   });
 
-  test.skip("should not show the content at the start", () => {
+  test("should not show the content at the start", () => {
     expect(screen.queryByText(/Content/i)).not.toBeInTheDocument();
   });
 
-  test.skip("should show the content on accordion click", async () => {
+  test("should show the content on accordion click", async () => {
     const title = screen.getByText(/Show/i);
     fireEvent.click(title);
 
