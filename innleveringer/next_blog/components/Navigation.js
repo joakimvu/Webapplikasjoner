@@ -9,12 +9,12 @@ const Navigation = () => {
       <ul>
         <li>
           <Link href="/">
-            <a>Home</a>
+            <a>Hjem</a>
           </Link>
         </li>
         <li>
           <Link href="/create">
-            <a>New Blog</a>
+            <a>Ny blog</a>
           </Link>
         </li>
       </ul>

@@ -1,11 +1,46 @@
 import { useRouter } from 'next/router'
+import { useState } from 'react'
+import useFetch from './../../hooks/useFetch'
 
-const blogsDetail = () => {
+const blogsDetails = () => {
   const router = useRouter()
-  const pid = router.query.id
+  const id = router.query.id
+  const [Loading, setLoading] = useState(false)
 
-  //   console.log(pid)
-  return <h2>Detail on blog {pid}</h2>
+  const {
+    data: blog,
+    error,
+    isPending,
+  } = useFetch(`http://localhost:8000/blogs/${id}`)
+
+  const handleDelete = (id) => {
+    setLoading(true)
+
+    fetch(`http://localhost:8000/blogs/${blog?.id}`, {
+      method: 'DELETE',
+    }).then(() => {
+      setTimeout(() => {
+        setLoading(false)
+        router.push('/')
+      }, 1500)
+    })
+  }
+
+  return (
+    <div className="blog-details">
+      {isPending && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      {blog && (
+        <article>
+          <h2>{blog?.title}</h2>
+          <p>Skrevet av {blog?.author}</p>
+          <p className="bodytext">{blog?.body}</p>
+          {!Loading && <button onClick={handleDelete}>Slett artikkel</button>}
+          {Loading && <button disabled>Sletter blogg...</button>}
+        </article>
+      )}
+    </div>
+  )
 }
 
-export default blogsDetail
+export default blogsDetails
