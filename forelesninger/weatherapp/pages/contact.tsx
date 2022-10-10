@@ -1,19 +1,19 @@
 import type { NextPage } from 'next'
 import Footer from '../components/Footer'
+import Form from '../components/Form'
 import StaticText from '../components/StaticText'
 import Title from '../components/Title'
 import WeatherDropdown from '../components/WeatherDropdown'
 import WeatherTable from '../components/WeatherTable'
 
-const Home: NextPage = () => {
+const Contact: NextPage = () => {
   return (
     <>
-      <Title title={'Velkommen til oversikten over været'} />
+      <Title title={'Kontakt Oss'} />
       <StaticText />
-      <WeatherDropdown />
-      <WeatherTable />
+      <Form />
     </>
   )
 }
 
-export default Home
+export default Contact

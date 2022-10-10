@@ -5,15 +5,14 @@ import Title from '../components/Title'
 import WeatherDropdown from '../components/WeatherDropdown'
 import WeatherTable from '../components/WeatherTable'
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
   return (
     <>
-      <Title title={'Velkommen til oversikten over været'} />
+      <Title title={'Om oss'} />
       <StaticText />
       <WeatherDropdown />
-      <WeatherTable />
     </>
   )
 }
 
-export default Home
+export default About
