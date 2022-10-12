@@ -1,10 +1,9 @@
 import Link from 'next/Link'
-import { useState, useEffect } from 'react'
 
-const Bloglist = ({ blogs, handleDelete }) => {
+const Bloglist = ({ blogs }) => {
   return (
     <div className="blog-list">
-      <h2>All blogs</h2>
+      <h2>Alle blogg</h2>
       {blogs?.map((blog) => (
         <div className="blog-preview" key={blog?.id}>
           <Link href={`/blogs/${blog?.id}`}>
@@ -13,7 +12,6 @@ const Bloglist = ({ blogs, handleDelete }) => {
               <p>{blog?.author}</p>
             </a>
           </Link>
-          {/* <button onClick={() => handleDelete(blog.id)}>Delete Blog</button> */}
         </div>
       ))}
     </div>
