@@ -38,9 +38,9 @@ export default async function handler(
       // TODO: Save in Database
       const poll = await prisma.poll.create({ data })
       // TODO: Return newly created poll
-      return res.status(201).json({ status: true, data: {} })
+      return res.status(201).json({ status: true, data: poll })
     default:
-      return res.status(400).json({
+      return res.status(405).json({
         success: false,
         error: 'Method not allowed',
       })

@@ -20,7 +20,7 @@ export default async function handler(
       const poll = null
       if (!poll)
         return res.status(404).json({ status: false, error: 'Poll not found' })
-      return res.status(200).json({ status: true, data: {} })
+      return res.status(200).json({ status: true, data: poll })
     case 'put':
       return res.status(201).json({ status: true, data: {} })
     case 'delete':
