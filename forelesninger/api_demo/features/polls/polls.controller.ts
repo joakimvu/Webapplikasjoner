@@ -8,17 +8,19 @@ export const createPoll = async (req, res) => {
       },
     })
 
-  const createPoll = await pollService.create({ title })
-  if (createPoll.status) {
+  const createdPoll = await pollService.create({ title })
+  if (createdPoll.status) {
     // TODO call loggerService
     // TODO return error to user
     return res.status(500).json({
       status: false,
-      error: createPoll.error,
+      error: createdPoll.error,
     })
   }
 
-  // TODO MANGLER NOE RETURN HER
-  return res.status(201).json({})
+  return res.status(201).json({
+    status: true,
+    data: createdPoll.data,
+  })
   // TODO call emailService
 }
