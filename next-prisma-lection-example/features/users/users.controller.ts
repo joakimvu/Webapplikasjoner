@@ -1,7 +1,8 @@
 import * as usersService from './users.service'
 
 export const createUser = async (req, res) => {
-  const { email } = req.body
+  // const  { email } = req.body DENNE VIRKER IKKE
+  const  email  = req.body
 
   // 400 Bad Request hvis email mangler
   if (!email)
