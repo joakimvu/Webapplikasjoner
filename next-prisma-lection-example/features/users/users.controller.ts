@@ -31,7 +31,6 @@ export const createUser = async (req, res) => {
 export const listUserFeeds = async (req, res) => {
   // henter ut email fra urlen
   const { email } = req.query
-
   if (!email)
     return res.status(400).json({
       success: false,
@@ -46,4 +45,9 @@ export const listUserFeeds = async (req, res) => {
       error: users.error,
     })
   }
+
+  return res.status(200).json({
+    success: true,
+    data: users.data,
+  })
 }
