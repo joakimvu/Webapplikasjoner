@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-// TODO: NOE MER HER... import prisma from '../../../'
+// import prisma from '../../../lib/db'
 const { PrismaClient } = require('@prisma/client')
 
 const prisma = new PrismaClient()
@@ -25,7 +25,7 @@ export default async function handler(
   switch (req.method?.toLowerCase()) {
     case 'get':
       const polls = await prisma.poll.findMany({ include: { questions: true } })
-      return res.status(200).json({ status: true, data: {} })
+      return res.status(200).json({ status: true, data: polls })
     case 'post':
       const data = req.body
       // TODO: Validata data
@@ -33,14 +33,14 @@ export default async function handler(
       if (!data.title)
         return res
           .status(400)
-          .json({ status: false, erroe: 'Title is required' })
+          .json({ status: false, error: 'Title is required' })
 
       // TODO: Save in Database
       const poll = await prisma.poll.create({ data })
       // TODO: Return newly created poll
-      return res.status(201).json({ status: true, data: {} })
+      return res.status(201).json({ status: true, data: poll })
     default:
-      return res.status(400).json({
+      return res.status(405).json({
         success: false,
         error: 'Method not allowed',
       })
