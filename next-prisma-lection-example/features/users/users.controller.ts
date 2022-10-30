@@ -27,3 +27,23 @@ export const createUser = async (req, res) => {
     data: createdUser.data,
   })
 }
+
+export const listUserFeeds = async (req, res) => {
+  // henter ut email fra urlen
+  const { email } = req.query
+
+  if (!email)
+    return res.status(400).json({
+      success: false,
+      error: 'Missing required fields: email',
+    })
+
+  const users = await usersService.getUserFeeds({ email })
+
+  if (!users?.success) {
+    return res.status(500).json({
+      success: false,
+      error: users.error,
+    })
+  }
+}

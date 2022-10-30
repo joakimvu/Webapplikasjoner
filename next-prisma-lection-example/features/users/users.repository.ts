@@ -26,3 +26,20 @@ export const exist = async ({ email }) => {
     return { success: false, error: 'Failed finding user' }
   }
 }
+
+export const findFeeds = async ({ email }) => {
+  try {
+    const userWithFeeds = await prisma.user.findMany({
+      where: {
+        email,
+      },
+      include: {
+        feeds: true,
+      },
+    })
+
+    return { success: true, data: userWithFeeds }
+  } catch (error) {
+    return { success: false, error: 'Failed finding user with feeds' }
+  }
+}
