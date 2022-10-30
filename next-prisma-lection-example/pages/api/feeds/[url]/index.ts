@@ -1,4 +1,4 @@
-import * as feedsController from '../../../features/feeds/feeds.controller'
+import * as feedsController from '../../../../features/feeds/feeds.controller'
 
 export default async function handler(req, res) {
   const { method } = req
