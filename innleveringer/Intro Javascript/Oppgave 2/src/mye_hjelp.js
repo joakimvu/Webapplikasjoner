@@ -49,8 +49,8 @@ const handleSearch = () => {
   const searchName = searchInput.value;
   if (searchName) {
     // Bruk .find for å finne navnet til den brukeren som matcher søkeordet
-    const searchResult = users.find(
-      (user) => user.name.toLowerCase() === searchName.toLowerCase()
+    const searchResult = users.find((user) =>
+      user.name.toLowerCase().includes(searchName.toLowerCase())
     );
     if (searchResult) {
       // TODO: Oppdatere grensesnittet med createTableUI og resultatet av søket
