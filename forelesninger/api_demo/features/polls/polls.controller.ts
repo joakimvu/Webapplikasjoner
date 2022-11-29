@@ -1,3 +1,5 @@
+import * as pollService from "./polls.services"
+
 export const createPoll = async (req, res) => {
   const { title } = req.body
   if (!title)
